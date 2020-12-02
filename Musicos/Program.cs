@@ -1,5 +1,3 @@
-﻿
-
 using System;
 using System.Collections.Generic;
 
@@ -55,7 +53,7 @@ namespace MusicosAbstractos
         }
         public override void Tocar()
         {
-            Console.WriteLine("{0} Toca su guitarra {1}", nombre);
+            Console.WriteLine("{0} Toca su guitarra\n", nombre);
         }
         public override void Saluda()
         {
@@ -67,7 +65,25 @@ namespace MusicosAbstractos
     {
         static void Main()
         {
+            //Bajista Roger = new Bajista("Roger Waters", "Fender P-Bass");
+            //Tecladista Rick = new Tecladista("Rick Wright", "Yamaha");
+            Guitarrista David = new Guitarrista("David Gilmour ", "Fender Stratocaster");
+            Baterista Nick  = new Baterista("Nick Mason", "Pearl");
 
+            List<Musico> grupo = new List<Musico>();
+
+            grupo.Add(David);
+            grupo.Add(Nick);
+            //grupo.Add();
+            //grupo.Add();
+
+
+            foreach (Musico b in grupo)
+            {
+                b.Afina();
+                b.Saluda();
+                b.Tocar();
+            }
         }
     }
 }
